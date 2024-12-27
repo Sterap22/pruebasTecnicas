@@ -1,0 +1,19 @@
+.BgCustomLogin{
+    background-image: url('../img/bg-theme-login.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+}
+
+.formLogin{
+    justify-items: center;
+    margin: auto;
+}
+@media (max-width: 768px) {
+    .BgCustomLogin{
+        display:none
+    }
+    .formDiv{
+        width: 100%;
+    }
+}
