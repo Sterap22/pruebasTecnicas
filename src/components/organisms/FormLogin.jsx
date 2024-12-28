@@ -8,10 +8,22 @@ import { ILogin } from '../../Interfaces/ILogin'
 import { CheckGrups } from '../molecules/CheckGrups'
 
 export const FormLogin = () => {
-    const { handlerChange, password, email } = useForm(ILogin)
+    const { handlerChange, password, email } = useForm(ILogin);
+
+    const handlerSubmit = (e) =>{
+        e.preventDefault();
+        if (!password || !email) {
+            console.log('Datos incompletos')
+            return
+        }else{
+            localStorage.setItem('Token', 'sdfsd.dsfjsdo')
+            window.location.href = '/home'
+        }
+        
+    }
 
   return (
-    <form className='p-4 w-[90%] formLogin'>
+    <form className='p-4 w-[90%] formLogin' onSubmit={handlerSubmit}>
         <UILabel tagCus='h4' classCus='text-center p-3 mt-6' styleCus={{ fontSize: '2rem'}}>
             Iniciar sesión
         </UILabel>
@@ -20,7 +32,7 @@ export const FormLogin = () => {
             classLabelCus='text-white'
             classDivCus='block p-4 w-[90%]'
             classInputCus='w-[100%] p-2 border border-gray-300 rounded-md text-black'
-            typeCus='text'
+            typeCus='email'
             labelcus='Correo'
             placeholderCus='example@example.com'
             valueCus={email}
@@ -49,7 +61,6 @@ export const FormLogin = () => {
         />
         <UIButton 
             classCus='bg-white text-black  min-w-[250px] p-2 rounded-md mt-4'
-            onClickCus={()=>{ console.log('Click en iniciar sesion')}}
         >
             Iniciar sesión
         </UIButton>

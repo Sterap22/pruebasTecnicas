@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { lazy } from 'react'
+import { Route, Routes } from 'react-router-dom';
+
+const Home = lazy(()=>import('../pages/Home'));
 
 const RoutersIn = () => {
   return (
-    <div>RoutersIn</div>
+    <Routes>
+        <Route path='/home' element={<Home />} />
+    </Routes>
   )
 }
 
