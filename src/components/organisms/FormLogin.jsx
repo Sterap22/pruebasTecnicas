@@ -13,7 +13,6 @@ export const FormLogin = () => {
     const handlerSubmit = (e) =>{
         e.preventDefault();
         if (!password || !email) {
-            console.log('Datos incompletos')
             return
         }else{
             localStorage.setItem('Token', 'sdfsd.dsfjsdo')
