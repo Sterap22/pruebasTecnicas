@@ -1,4 +1,4 @@
-import React from 'react'
+import { InputProps } from "../../Interfaces/props/Input.props"
 
 export const UIInput = ({ 
     typeCus = 'text',
@@ -8,7 +8,7 @@ export const UIInput = ({
     valueCus = '',
     onChageCus = () => {},
     idCus=''
-}) => {
+}:InputProps) => {
   return (
     <input 
         id={idCus}

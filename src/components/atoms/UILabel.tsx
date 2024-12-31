@@ -1,13 +1,13 @@
-import React from 'react'
+import { LabelProps } from '../../Interfaces/props/Label.props';
 
 export const UILabel = ({
   tagCus = 'p',
-  children,
+  children = null,
   classCus = '',
   styleCus = {},
-  forCus ='',
-}) => {
-  const Tag = tagCus;
+  forCus =''
+}:LabelProps) => {
+  const Tag = tagCus as keyof JSX.IntrinsicElements;
   return<Tag
       htmlFor={forCus}
       className={classCus}

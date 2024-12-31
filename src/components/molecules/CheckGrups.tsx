@@ -1,6 +1,6 @@
-import React from 'react'
 import { UIInput } from '../atoms/UIInput'
 import { UILabel } from '../atoms/UILabel'
+import { CheckGrupsProps } from '../../Interfaces/props/CheckGrups.props'
 
 export const CheckGrups = ({
     classCKCus='',
@@ -9,7 +9,7 @@ export const CheckGrups = ({
     idCus='',
     typeCus='',
     tagCus=''
-}) => {
+}:CheckGrupsProps) => {
   return (
     <div className={classCKCus}>
         <UIInput 

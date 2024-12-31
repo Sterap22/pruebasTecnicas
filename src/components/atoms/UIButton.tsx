@@ -1,11 +1,11 @@
-import React from 'react'
+import { UIButtonProps } from "../../Interfaces/props/Button.props"
 
 export const UIButton = ({
-    children = {},
+    children = null,
     classCus = '',
     styleCus = {},
     onClickCus = () => {}
-}) => {
+}: UIButtonProps) => {
   return (
     <button
       className={classCus}

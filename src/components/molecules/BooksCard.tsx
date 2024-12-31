@@ -1,7 +1,10 @@
-import React from 'react';
 import { UILabel } from '../atoms/UILabel';
+import { BooksCardProps } from '../../Interfaces/props/BooksCard.props';
 
-export const BooksCard = ({ classCus = '', cover, synopsis}) => {
+export const BooksCard = ({ 
+    classCus = '', 
+    cover = '', 
+    synopsis = ''}:BooksCardProps) => {
   return (
     <div className="BooksCard-container">
       <div className={`BooksCard ${classCus}`}>

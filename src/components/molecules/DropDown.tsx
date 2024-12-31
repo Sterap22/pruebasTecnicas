@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { UILabel } from '../atoms/UILabel'
+import { DropDownProp } from '../../Interfaces/props/DropDown.props'
 
-export const DropDown = ({ label = '', options  = [], valueDefault = '', onClickCus }) => {
+export const DropDown = ({ label = '', options  = [], valueDefault = '', onClickCus = () => {} }: DropDownProp) => {
     const [value, setValue] = useState("All")
     return (
-        <div className="block p-4 w-[30%]">
+        <div className="block p-4 w-[90%]">
             <div className="relative w-full group">
                 <UILabel 
                     tagCus='label'
