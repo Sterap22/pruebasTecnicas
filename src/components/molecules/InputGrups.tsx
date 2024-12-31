@@ -1,6 +1,6 @@
-import React from 'react'
 import { UILabel } from '../atoms/UILabel'
 import { UIInput } from '../atoms/UIInput'
+import { InputGrupsProps } from '../../Interfaces/props/InputGrups.porps';
 
 const InputGrups = ({
     classDivCus = '',
@@ -16,7 +16,7 @@ const InputGrups = ({
     typeCus = 'text',
     valueCus = '',
     idCus = ''
-}) => {
+}:InputGrupsProps) => {
     const idInput = idCus ? idCus : Math.random().toString(36).substring(7);
   return (
     <div 

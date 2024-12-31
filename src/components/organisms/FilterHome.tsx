@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import dataBooks from '../../assets/products.json';
 import { BooksCard } from '../molecules/BooksCard';
 import '../../assets/styles/BooksCard.css';
 import { DropDown } from '../molecules/DropDown';
 import { UILabel } from '../atoms/UILabel';
 import InputGrups from '../molecules/InputGrups';
+import { IBook } from '../../Interfaces/IBooks';
 
 export const FilterHome = () => {
-    const [books, setBooks] = useState([]); // Libros filtrados
-    const [allBooks, setAllBooks] = useState([]); // Todos los libros
-    const [categories, setCategories] = useState([]); // Categorías de libros
+    const [books, setBooks] = useState<IBook[]>([]); // Libros filtrados
+    const [allBooks, setAllBooks] = useState<IBook[]>([]); // Todos los libros
+    const [categories, setCategories] = useState<string[]>([]); // Categorías de libros
 
     useEffect(() => {
         const booksList = dataBooks.library.map((x) => x.book);
@@ -19,7 +20,7 @@ export const FilterHome = () => {
         setCategories(uniqueCategories);
     }, []);
 
-    const filterGenre = (keyword) => {
+    const filterGenre = (keyword: String) => {
         const filteredBooks = keyword !== 'All'?
             allBooks.filter(({ genre }) => genre.toLowerCase() === keyword.toLowerCase()):
             allBooks;

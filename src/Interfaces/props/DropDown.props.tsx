@@ -1,6 +1,6 @@
 export interface DropDownProp {
     label?: string, 
-    options?: object[], 
+    options?: string[], 
     valueDefault?: string, 
     onClickCus?:(text: string) => void
 }

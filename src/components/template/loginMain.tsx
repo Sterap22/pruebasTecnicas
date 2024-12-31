@@ -1,7 +1,7 @@
-import React from 'react'
 import '../../assets/styles/Theme-login.css'
+import { IThemeProps } from '../../Interfaces/props/Theme.props'
 
-const LoginMain = ({ children }) => {
+const LoginMain = ({ children }:IThemeProps) => {
   return (
     <div>
         <main className='h-[94vh] w-screen flex'>

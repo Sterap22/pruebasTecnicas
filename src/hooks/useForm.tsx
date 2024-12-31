@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-export const useForm = ({ FormModel }) => {
+export const useForm =<T extends Object> (FormModel: T) => {
     const [state, setState] = useState(FormModel)
 
-    const handlerChange = (name, value) => {
+    const handlerChange = (name: string, value: keyof T) => {
         setState({
             ...state,
             [name]: value

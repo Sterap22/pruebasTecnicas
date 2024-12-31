@@ -1,16 +1,19 @@
-import React from 'react'
 import { UILabel } from '../atoms/UILabel'
 import InputGrups from '../molecules/InputGrups'
 import '../../assets/styles/Theme-login.css'
 import { UIButton } from '../atoms/UIButton'
 import { useForm } from '../../hooks/useForm'
-import { ILogin } from '../../Interfaces/ILogin'
 import { CheckGrups } from '../molecules/CheckGrups'
+import { ILogin } from '../../Interfaces/ILogin'
+import React from 'react'
 
 export const FormLogin = () => {
-    const { handlerChange, password, email } = useForm(ILogin);
+    const { handlerChange, password, email } = useForm<ILogin>({
+        email:'',
+        password: ''
+    });
 
-    const handlerSubmit = (e) =>{
+    const handlerSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
         if (!password || !email) {
             return
