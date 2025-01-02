@@ -1,0 +1,17 @@
+.modal {
+    animation: ShowModal 2s ease 0s 1 normal forwards;
+}
+
+@keyframes ShowModal {
+    0% {
+        opacity: 0;
+        transform: translateX(100%) scale(0.8);
+        transform-origin: right;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        transform-origin: right;
+    }
+}

@@ -1,0 +1,7 @@
+.BtnMenu{
+    background-image: url('../icon/menu-outline.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: right;
+    cursor: pointer;
+}

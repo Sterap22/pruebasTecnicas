@@ -8,6 +8,7 @@ import InputGrups from '../molecules/InputGrups';
 import { IBook } from '../../Interfaces/IBooks';
 import { useForm } from '../../hooks/useForm';
 import { IFilter } from '../../Interfaces/IFilter';
+import { UIModal } from '../atoms/UIModal';
 
 export const FilterHome = () => {
     const [books, setBooks] = useState<IBook[]>([]); // Libros filtrados
@@ -71,7 +72,7 @@ export const FilterHome = () => {
                     labelcus='Pagina'
                     placeholderCus='Busqueda'
                     styleLabelCus={{ fontSize: '15px' }}
-                    onChageCus={({target})=> {console.log(target.value,'valor');handlerChange('range',target.value);filter(target.value,'pages')}}
+                    onChageCus={({target})=> {console.log(target.value,'valor');handlerChange('range',target.value);filter(target.value,'pages')}} //TO DO: Ajustar filtrado por numero depaginas 
                     valueCus={range}
                 />
             </div>
