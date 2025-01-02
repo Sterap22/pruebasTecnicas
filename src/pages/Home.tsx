@@ -1,4 +1,3 @@
-import React from 'react'
 import { FilterHome } from '../components/organisms/FilterHome'
 
 const Home = () => {

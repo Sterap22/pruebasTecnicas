@@ -8,7 +8,7 @@ export interface InputGrupsProps{
     styleLabelCus?: CSSProperties;
     styleInputCus?: CSSProperties;
     styleDevCus?: CSSProperties;
-    onChageCus?: () => void;
+    onChageCus?: (text: string, key: string) => void;
     labelcus?: string;
     tagCus?: string;
     typeCus?: string;

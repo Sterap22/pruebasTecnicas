@@ -19,7 +19,7 @@ export const DropDown = ({ label = '', options  = [], valueDefault = '', onClick
                 <div
                     className="absolute z-[99] top-[100%] left-[50%] translate-x-[-50%] rounded-md overflow-hidden shadow-lg min-w-full w-max peer-focus:visible peer-focus:opacity-100 opacity-0 invisible duration-200 p-1 bg-gray-100 dark:bg-gray-800  border border-dimmed text-xs md:text-sm">
                     <div
-                        onClick={()=>{onClickCus(valueDefault);setValue(valueDefault)}}
+                        onClick={()=>{onClickCus(valueDefault,'genre');setValue(valueDefault)}}
                         className="w-full block cursor-pointer hover:bg-white dark:hover:bg-gray-900 dark:bg-gray-800 hover:text-link px-3 py-2 rounded-md">
                         {valueDefault}
                     </div>
@@ -28,7 +28,7 @@ export const DropDown = ({ label = '', options  = [], valueDefault = '', onClick
                             options.map((item,  index)=>(
                                 <div
                                     key={'IDOptions-'+index}
-                                    onClick={()=>{onClickCus(item);setValue(item)}}
+                                    onClick={()=>{onClickCus(item,'genre');setValue(item)}}
                                     className="w-full block cursor-pointer hover:bg-white dark:hover:bg-gray-900 dark:bg-gray-800 hover:text-link px-3 py-2 rounded-md">
                                     {item}
                                 </div>

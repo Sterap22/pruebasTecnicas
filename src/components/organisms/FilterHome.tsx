@@ -6,11 +6,17 @@ import { DropDown } from '../molecules/DropDown';
 import { UILabel } from '../atoms/UILabel';
 import InputGrups from '../molecules/InputGrups';
 import { IBook } from '../../Interfaces/IBooks';
+import { useForm } from '../../hooks/useForm';
+import { IFilter } from '../../Interfaces/IFilter';
 
 export const FilterHome = () => {
     const [books, setBooks] = useState<IBook[]>([]); // Libros filtrados
     const [allBooks, setAllBooks] = useState<IBook[]>([]); // Todos los libros
     const [categories, setCategories] = useState<string[]>([]); // Categorías de libros
+    const { handlerChange, search, range } = useForm<IFilter>({
+            search:'',
+            range: ''
+        });
 
     useEffect(() => {
         const booksList = dataBooks.library.map((x) => x.book);
@@ -20,9 +26,9 @@ export const FilterHome = () => {
         setCategories(uniqueCategories);
     }, []);
 
-    const filterGenre = (keyword: String) => {
-        const filteredBooks = keyword !== 'All'?
-            allBooks.filter(({ genre }) => genre.toLowerCase() === keyword.toLowerCase()):
+    const filter = (keyword: string, key: string) => {
+        const filteredBooks = (keyword !== 'All' || !keyword)?
+            allBooks.filter((book) => book[key as keyof IBook]?.toString().toLowerCase().includes(keyword.toLowerCase())):
             allBooks;
         setBooks(filteredBooks);
     };
@@ -47,12 +53,14 @@ export const FilterHome = () => {
                     labelcus='Palabra clave'
                     placeholderCus='Busqueda'
                     styleLabelCus={{ fontSize: '15px' }}
+                    onChageCus={({target})=> {handlerChange('search',target.value);filter(target.value,'title')}}
+                    valueCus={search}
                 />
                 <DropDown
                     label='Genero'
                     valueDefault='All'
                     options={categories}
-                    onClickCus={filterGenre}
+                    onClickCus={filter}
                 />
                 <InputGrups
                     tagCus='span'
@@ -63,6 +71,8 @@ export const FilterHome = () => {
                     labelcus='Pagina'
                     placeholderCus='Busqueda'
                     styleLabelCus={{ fontSize: '15px' }}
+                    onChageCus={({target})=> {console.log(target.value,'valor');handlerChange('range',target.value);filter(target.value,'pages')}}
+                    valueCus={range}
                 />
             </div>
             <div>
