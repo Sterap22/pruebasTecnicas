@@ -2,6 +2,18 @@
     animation: ShowModal 2s ease 0s 1 normal forwards;
 }
 
+.CloseModal{
+    background-image: url('../icon/close-outline.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    left: 58%;
+    top:  23px;
+    z-index: 9999;
+}
+
 @keyframes ShowModal {
     0% {
         opacity: 0;

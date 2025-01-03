@@ -4,9 +4,11 @@ import { BooksCardProps } from '../../Interfaces/props/BooksCard.props';
 export const BooksCard = ({ 
     classCus = '', 
     cover = '', 
-    synopsis = ''}:BooksCardProps) => {
+    synopsis = '',
+    onClickCus = () => {},
+  }:BooksCardProps) => {
   return (
-    <div className="BooksCard-container">
+    <div className="BooksCard-container" onClick={onClickCus}>
       <div className={`BooksCard ${classCus}`}>
         {/* Lado frontal con la imagen */}
         <div

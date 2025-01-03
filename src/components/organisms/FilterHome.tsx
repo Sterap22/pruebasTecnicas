@@ -8,12 +8,12 @@ import InputGrups from '../molecules/InputGrups';
 import { IBook } from '../../Interfaces/IBooks';
 import { useForm } from '../../hooks/useForm';
 import { IFilter } from '../../Interfaces/IFilter';
-import { UIModal } from '../atoms/UIModal';
 
 export const FilterHome = () => {
     const [books, setBooks] = useState<IBook[]>([]); // Libros filtrados
     const [allBooks, setAllBooks] = useState<IBook[]>([]); // Todos los libros
     const [categories, setCategories] = useState<string[]>([]); // Categorías de libros
+    const [readBook, setrReadBook] = useState<string[]>([]); // Lista de lectura
     const { handlerChange, search, range } = useForm<IFilter>({
             search:'',
             range: ''
@@ -32,6 +32,14 @@ export const FilterHome = () => {
             allBooks.filter((book) => book[key as keyof IBook]?.toString().toLowerCase().includes(keyword.toLowerCase())):
             allBooks;
         setBooks(filteredBooks);
+    };
+
+    const clickSelector = (Key:string) => {
+        readBook.push(Key)
+        const filteredBooks = books.filter(({ISBN}) => ISBN !== Key);
+        setBooks(filteredBooks);
+        setrReadBook(readBook)
+        localStorage.setItem('data_ReadBook',JSON.stringify(readBook));
     };
 
     if (books.length === 0 && allBooks.length === 0) {
@@ -88,6 +96,7 @@ export const FilterHome = () => {
                             classCus='bg-cover bg-center h-[250px] w-[80%] rounded-md cursor-pointer'
                             cover={book.cover}
                             synopsis={book.synopsis}
+                            onClickCus={()=>clickSelector(book.ISBN)}
                         />
                     ))}
                 </div>
