@@ -1,0 +1,55 @@
+{
+    "students": [
+      {
+        "studentId": 1,
+        "name": "Luis Posada",
+        "classes": [1, 2, 3]
+      },
+      {
+        "studentId": 2,
+        "name": "Ana Ramírez",
+        "classes": [2, 4, 5]
+      },
+      {
+        "studentId": 3,
+        "name": "Javier Morales",
+        "classes": [1, 3, 5]
+      },
+      {
+        "studentId": 4,
+        "name": "María Torres",
+        "classes": [1, 2, 4]
+      },
+      {
+        "studentId": 5,
+        "name": "Carlos Gómez",
+        "classes": [3, 4, 5]
+      },
+      {
+        "studentId": 6,
+        "name": "Sofía López",
+        "classes": [2, 3, 4]
+      },
+      {
+        "studentId": 7,
+        "name": "Diego Fernández",
+        "classes": [1, 5, 4]
+      },
+      {
+        "studentId": 8,
+        "name": "Isabel Castillo",
+        "classes": [1, 2, 3, 4]
+      },
+      {
+        "studentId": 9,
+        "name": "Ricardo Hernández",
+        "classes": [3, 4, 5]
+      },
+      {
+        "studentId": 10,
+        "name": "Valeria Martínez",
+        "classes": [1, 2]
+      }
+    ]
+  }
+  

@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: #2a2a2a;
+}

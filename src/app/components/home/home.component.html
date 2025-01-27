@@ -1,0 +1,33 @@
+<div class="block blockitems-center justify-center bg-gray-100 p-5">
+    <div class="float-right block">
+        <span class="float-right">Hola, Usuario 1</span>
+        <br>
+        <span class="text-[13px]">Creditos disponibles: 15</span>
+    </div>
+    <br>
+    <br>
+    <h1 class="text-center mb-5 text-[25px]">Clases disponibles</h1>
+    <div class="blockitems-center justify-center bg-gray-100 grid grid-cols-1 md:grid-cols-3 gap-4" >
+         <!-- Color asignatura con el mismo tutor #ff8787ed -->
+        <div 
+            [ngClass]="'max-w-md w-full space-y-1 p-5 shadow-lg rounded-lg m-auto cursor-pointer bg-[#d3ffd7]/75'" *ngFor="let classroom of data"
+            (click)="FavoriteAdd(classroom.ID)"
+            > 
+            <div class="h-[20px]">Profesor: {{ classroom.professor }}</div>
+            <div class="h-[80px] content-center">Asignatura: {{classroom.subject}}</div>
+            <div class="h-[20px]">Creditos: {{classroom.credits}}</div>
+        </div>
+    </div>
+    <h1 class="text-center mb-5 mt-5 text-[25px]">Mis clases</h1>
+    <div class="blockitems-center justify-center bg-gray-100 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div 
+            [ngClass]="'max-w-md w-full space-y-1 p-5 shadow-lg rounded-lg m-auto cursor-pointer bg-[#ff8787ed]/75'" 
+            *ngFor="let classroom of Mydata"
+            (click)="goToScreen(classroom.ID)"
+            > 
+            <div class="h-[20px]">Profesor: {{ classroom.professor }}</div>
+            <div class="h-[80px] content-center">Asignatura: {{classroom.subject}}</div>
+            <div class="h-[20px]">Creditos: {{classroom.credits}}</div>
+        </div>
+    </div>
+</div>

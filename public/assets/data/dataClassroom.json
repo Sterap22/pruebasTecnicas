@@ -1,0 +1,192 @@
+{
+    "courses": [
+      {
+        "ID": 1,
+        "professor": "Luis Posada",
+        "subject": "Matemática Cuántica",
+        "credits": 3,
+        "schedule": {
+          "days": ["Lunes", "Miércoles", "Viernes"],
+          "time": "10:00 AM - 11:30 AM"
+        },
+        "semester": "Primavera 2025",
+        "location": {
+          "building": "Edificio de Ciencias",
+          "room": "B204"
+        },
+        "studentsEnrolled": 45,
+        "courseDescription": "Introducción a las técnicas matemáticas avanzadas utilizadas en la mecánica cuántica, como álgebra lineal, ecuaciones diferenciales y espacios de Hilbert."
+      },
+      {
+        "ID": 2,
+        "professor": "Ana Ramírez",
+        "subject": "Física Teórica",
+        "credits": 4,
+        "schedule": {
+          "days": ["Martes", "Jueves"],
+          "time": "2:00 PM - 4:00 PM"
+        },
+        "semester": "Otoño 2024",
+        "location": {
+          "building": "Facultad de Física",
+          "room": "A101"
+        },
+        "studentsEnrolled": 30,
+        "courseDescription": "Curso avanzado sobre las leyes fundamentales de la física y sus aplicaciones teóricas en la investigación moderna."
+      },
+      {
+        "ID": 3,
+        "professor": "Javier Morales",
+        "subject": "Álgebra Lineal Avanzada",
+        "credits": 3,
+        "schedule": {
+          "days": ["Lunes", "Miércoles"],
+          "time": "8:00 AM - 9:30 AM"
+        },
+        "semester": "Invierno 2024",
+        "location": {
+          "building": "Edificio de Matemáticas",
+          "room": "C303"
+        },
+        "studentsEnrolled": 25,
+        "courseDescription": "Estudio profundo de los conceptos de álgebra lineal, incluyendo transformaciones lineales, valores propios y vectores propios."
+      },
+      {
+        "ID": 4,
+        "professor": "María Torres",
+        "subject": "Cálculo Multivariable",
+        "credits": 4,
+        "schedule": {
+          "days": ["Lunes", "Martes", "Jueves"],
+          "time": "11:00 AM - 12:30 PM"
+        },
+        "semester": "Verano 2025",
+        "location": {
+          "building": "Centro de Ingeniería",
+          "room": "D105"
+        },
+        "studentsEnrolled": 50,
+        "courseDescription": "Exploración de las aplicaciones del cálculo en múltiples variables, integrales múltiples y teoría vectorial."
+      },
+      {
+        "ID": 5,
+        "professor": "Carlos Pérez",
+        "subject": "Ecuaciones Diferenciales",
+        "credits": 3,
+        "schedule": {
+          "days": ["Miércoles", "Viernes"],
+          "time": "1:00 PM - 2:30 PM"
+        },
+        "semester": "Primavera 2025",
+        "location": {
+          "building": "Edificio de Ciencias",
+          "room": "A202"
+        },
+        "studentsEnrolled": 40,
+        "courseDescription": "Introducción a las ecuaciones diferenciales y sus aplicaciones en la ingeniería y las ciencias."
+      },
+      {
+        "ID": 6,
+        "professor": "Sofía López",
+        "subject": "Mecánica Clásica",
+        "credits": 4,
+        "schedule": {
+          "days": ["Martes", "Jueves"],
+          "time": "3:00 PM - 5:00 PM"
+        },
+        "semester": "Otoño 2024",
+        "location": {
+          "building": "Facultad de Física",
+          "room": "B305"
+        },
+        "studentsEnrolled": 35,
+        "courseDescription": "Estudio detallado de las leyes de Newton y sus aplicaciones en sistemas físicos complejos."
+      },
+      {
+        "ID": 7,
+        "professor": "Elena Rodríguez",
+        "subject": "Teoría de Números",
+        "credits": 3,
+        "schedule": {
+          "days": ["Lunes", "Miércoles"],
+          "time": "9:00 AM - 10:30 AM"
+        },
+        "semester": "Invierno 2025",
+        "location": {
+          "building": "Edificio de Matemáticas",
+          "room": "C101"
+        },
+        "studentsEnrolled": 20,
+        "courseDescription": "Exploración de las propiedades de los números enteros y sus aplicaciones en criptografía y otras áreas."
+      },
+      {
+        "ID": 8,
+        "professor": "Juan Fernández",
+        "subject": "Análisis Real",
+        "credits": 3,
+        "schedule": {
+          "days": ["Martes", "Jueves"],
+          "time": "10:00 AM - 11:30 AM"
+        },
+        "semester": "Primavera 2025",
+        "location": {
+          "building": "Facultad de Matemáticas",
+          "room": "A303"
+        },
+        "studentsEnrolled": 28,
+        "courseDescription": "Estudio de las propiedades de las funciones reales, límites, continuidad y derivabilidad."
+      },
+      {
+        "ID": 9,
+        "professor": "Gabriela Díaz",
+        "subject": "Probabilidad y Estadística",
+        "credits": 4,
+        "schedule": {
+          "days": ["Lunes", "Miércoles", "Viernes"],
+          "time": "12:00 PM - 1:30 PM"
+        },
+        "semester": "Verano 2025",
+        "location": {
+          "building": "Centro de Estadística",
+          "room": "B102"
+        },
+        "studentsEnrolled": 60,
+        "courseDescription": "Introducción a los principios de probabilidad y análisis estadístico aplicados en las ciencias sociales."
+      },
+      {
+        "ID": 10,
+        "professor": "Diego Castillo",
+        "subject": "Electrodinámica",
+        "credits": 4,
+        "schedule": {
+          "days": ["Martes", "Jueves"],
+          "time": "4:00 PM - 6:00 PM"
+        },
+        "semester": "Otoño 2024",
+        "location": {
+          "building": "Facultad de Ingeniería",
+          "room": "D302"
+        },
+        "studentsEnrolled": 42,
+        "courseDescription": "Análisis de los campos eléctricos y magnéticos y sus interacciones con la materia."
+      },
+      {
+        "ID": 11,
+        "professor": "Patricia Vargas",
+        "subject": "Geometría Diferencial",
+        "credits": 3,
+        "schedule": {
+          "days": ["Miércoles", "Viernes"],
+          "time": "10:00 AM - 11:30 AM"
+        },
+        "semester": "Primavera 2025",
+        "location": {
+          "building": "Edificio de Matemáticas",
+          "room": "C201"
+        },
+        "studentsEnrolled": 15,
+        "courseDescription": "Estudio de las propiedades geométricas y topológicas de curvas y superficies."
+      }
+    ]
+  }
+  
