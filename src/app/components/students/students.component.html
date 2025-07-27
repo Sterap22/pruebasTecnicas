@@ -1,0 +1,106 @@
+<!-- Título -->
+<h1 class="text-center mb-5 text-[25px]">Administrador de estudiantes</h1>
+
+<!-- Botón Registrar -->
+<div class="p-4 flex justify-end">
+  <button (click)="openCreateModal()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Registrar estudiante
+  </button>
+</div>
+
+<!-- Filtro de búsqueda -->
+<div class="p-4">
+  <input type="text" placeholder="Buscar estudiante..." [(ngModel)]="searchTerm" class="p-2 border w-full rounded" />
+</div>
+
+<div class="overflow-x-auto p-4">
+  <!-- Tabla de Estudiantes -->
+  <table class="min-w-full text-sm text-left text-gray-700 border border-gray-300 rounded-md">
+    <thead class="bg-gray-100 text-xs uppercase text-gray-600">
+      <tr>
+        <th class="px-4 py-2">ID</th>
+        <th class="px-4 py-2">Nombre</th>
+        <th class="px-4 py-2">Documento</th>
+        <th class="px-4 py-2 text-center">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Student of paginatedNotes" class="border-t hover:bg-gray-50">
+          <td class="px-4 py-2">{{ Student.id }}</td>
+          <td class="px-4 py-2">{{ Student.name }}</td>
+          <td class="px-4 py-2">{{ Student.document  }}</td>
+          <td class="px-4 py-2">
+            <div class="flex justify-center gap-1">
+              <button
+                (click)="edit(Student)"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs"
+              >
+                Ver
+              </button>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <!-- Paginador -->
+  <div class="mt-4 flex justify-center items-center gap-2">
+    <button
+      class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400 text-sm"
+      (click)="changePage(currentPage - 1)"
+      [disabled]="currentPage === 1"
+    >
+      Anterior
+    </button>
+
+    <ng-container *ngFor="let page of [].constructor(totalPages); let i = index">
+      <button
+        class="px-3 py-1 rounded text-sm"
+        [ngClass]="{
+          'bg-blue-500 text-white': currentPage === i + 1,
+          'bg-gray-200 hover:bg-gray-300': currentPage !== i + 1
+        }"
+        (click)="changePage(i + 1)"
+      >
+        {{ i + 1 }}
+      </button>
+    </ng-container>
+
+    <button
+      class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400 text-sm"
+      (click)="changePage(currentPage + 1)"
+      [disabled]="currentPage === totalPages"
+    >
+      Siguiente
+    </button>
+  </div>
+</div>
+
+<!-- Volver Home -->
+
+<!-- Formulario Modal para crear/editar estudiante -->
+<div *ngIf="editing || showCreateModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white p-6 rounded-lg w-[90%] md:w-[500px] relative">
+    <button (click)="resetForm()" class="absolute top-2 right-2 text-red-500 text-xl">&times;</button>
+    <h2 class="text-xl font-bold mb-4">{{ editing ? 'Actualizar' : 'Registrar' }} estudiante</h2>
+
+    <form [formGroup]="StudentForm" (ngSubmit)="save()" class="space-y-3">
+      <input type="text" formControlName="document" placeholder="Documento"
+        class="w-full border p-2 rounded" />
+      <input type="text" formControlName="name" placeholder="Nombre"
+        class="w-full border p-2 rounded" />
+
+      <button type="submit"
+        class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">
+        {{ editing ? 'Actualizar' : 'Guardar' }}
+      </button>
+    </form>
+
+    <!-- Botón eliminar si se está editando -->
+    <div *ngIf="editing" class="mt-4">
+      <button (click)="delete(currentId!)" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full">
+        Eliminar estudiante
+      </button>
+    </div>
+  </div>
+</div>

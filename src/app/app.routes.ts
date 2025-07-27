@@ -1,12 +1,24 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-import { ClassRoomComponent } from './components/class-room/class-room.component';
+import { StudentsComponent } from './components/students/students.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 export const routes: Routes = [
-    { path: '', component: LoginComponent},
-    { path: 'register', component: RegisterComponent},
-    { path: 'home', component: HomeComponent},
-    { path: 'classDetail/:id', component: ClassRoomComponent},
+  {
+    path: '',
+    component: WelcomeComponent
+  },
+  {
+    path: 'students',
+    component: StudentsComponent
+  },
+  {
+    path: 'teachers',
+    component: TeachersComponent
+  },
+  {
+    path: 'notes',
+    component: HomeComponent
+  }
 ];

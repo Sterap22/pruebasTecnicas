@@ -1,5 +1,53 @@
-<div class="flex flex-col sm:flex-row h-min-screen bg-gray-100">
-  <div class="flex-1 flex flex-col overflow-hidden h-min-screen">
-      <router-outlet></router-outlet>
+<div class="flex h-screen">
+  <!-- Sidebar -->
+  <div
+    [ngClass]="{
+      'w-64': isOpen,
+      'w-16': !isOpen
+    }"
+    class="bg-white text-black transition-all duration-300 ease-in-out"
+  >
+    <div class="flex items-center justify-between px-4 py-4">
+      <img *ngIf="isOpen" class="text-lg font-bold" src="https://www.audisoft.com/web/image/website/1/logo/AudiSoft?unique=ce97ba5" style="width: 100px;">
+      <button (click)="toggleSidebar()" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <nav class="mt-4">
+      <a
+        (click)="goToNavigate('/')"
+        class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-white transition"
+      >
+        <span class="ml-2" *ngIf="isOpen">Inicio</span>
+      </a>
+      <a
+        (click)="goToNavigate('/students')"
+        class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-white transition"
+      >
+        <span class="ml-2" *ngIf="isOpen">Estudiantes</span>
+      </a>
+      <a
+        (click)="goToNavigate('/teachers')"
+        class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-white transition"
+      >
+        <span class="ml-2" *ngIf="isOpen">Profesores</span>
+      </a>
+      <a
+        (click)="goToNavigate('/notes')"
+        class="flex items-center px-4 py-2 hover:bg-gray-700 hover:text-white transition"
+      >
+        <span class="ml-2" *ngIf="isOpen">Notas</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Main content -->
+  <div class="flex-1 p-6 overflow-auto bg-gray-100">
+    <router-outlet></router-outlet>
   </div>
 </div>
+

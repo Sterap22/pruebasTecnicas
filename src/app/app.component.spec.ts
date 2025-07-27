@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'inter-rapidisimo-prueba' title`, () => {
+  it(`should have the 'audisoft-prueba' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('inter-rapidisimo-prueba');
+    expect(app.title).toEqual('audisoft-prueba');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, inter-rapidisimo-prueba');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, audisoft-prueba');
   });
 });

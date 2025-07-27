@@ -1,6 +1,6 @@
-# prueba Tecnica frontend Inter rapidisimo
+# prueba Tecnica frontend
 
-proyecto realizado en Angular 19.0.7, prueba tecnica inter rapidisimo.
+proyecto realizado en Angular 19.0.7, prueba tecnica.
 
 Criterios de aceptación:
 
